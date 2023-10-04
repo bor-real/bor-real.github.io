@@ -1,3 +1,7 @@
+:root {
+    --main-color:#011627;
+}
+
 body {
     background-color: black;
 }
@@ -8,14 +12,14 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header header"
-        "main profile other";
+        "main stats links";
 
     grid-gap: 10px;
 }
 
 .header {
     grid-area: header;
-    background-color: #593959;
+    background-color: var(--main-color);
     border-radius: 5px;
     padding: 5px;
     text-align: center;
@@ -24,7 +28,7 @@ body {
 
 .main {
     grid-area: main;
-    background-color: #593959;
+    background-color: var(--main-color);
     border-radius: 5px;
     padding: 20px;
     text-align: left;
@@ -34,5 +38,30 @@ body {
     background-size: auto 100%;
     background-position: right;
 
-    color:white
+    color:white;
 }
+
+.stats {
+    grid-area: stats;
+    background-color: var(--main-color);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.links {
+    grid-area: links;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.link {
+    background-color: #41EAD4;
+    border-radius: 5px;
+}
+
