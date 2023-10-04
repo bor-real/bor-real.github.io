@@ -37,7 +37,6 @@ async function main() {
         }
 
         data = await response.json()
-        console.log(data)
 
         setDOMValues()
     } 
