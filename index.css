@@ -1,11 +1,23 @@
+body {
+    background-color: black;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px; /* Gap between grid items */
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main";
+
+    grid-gap: 10px;
 }
 
-.grid-item {
+.header {
+    grid-area: header;
     background-color: #593959;
+    border-radius: 5px;
     padding: 20px;
     text-align: center;
+    color: white;
 }
