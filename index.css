@@ -49,6 +49,7 @@ body {
 }
 
 .status-pfp {
+    border: 3px solid #FFFFFF;
     border-radius: 50%;
     width: 100%;
 }
