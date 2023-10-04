@@ -3,6 +3,8 @@
 }
 
 body {
+    font-family: sans-serif;
+
     background-color: black;
     
     background-image: url(assets/profile-widescreen.png);
@@ -18,7 +20,7 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header header"
-        "main stats links";
+        "status stats links";
 
     grid-gap: 10px;
 }
@@ -32,25 +34,29 @@ body {
     color: white;
 }
 
-.main {
-    grid-area: main;
+.status {
+    grid-area: status;
     background-color: var(--main-color);
     border-radius: 5px;
     padding: 20px;
     text-align: left;
-
-    background-repeat: no-repeat;
-    background-image: url("assets/profile.png");
-    background-size: auto 100%;
-    background-position: right;
-
     color:white;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center; 
+    place-items: center;
+}
+
+.status-pfp {
+    border-radius: 50%;
+    width: 100%;
 }
 
 .stats {
     grid-area: stats;
     background-color: var(--main-color);
-    text-align: right;
+    text-align: center;
     border-radius: 5px
 }
 
