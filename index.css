@@ -8,7 +8,7 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header header"
-        "sidebar main main";
+        "main main other";
 
     grid-gap: 10px;
 }
@@ -17,7 +17,16 @@ body {
     grid-area: header;
     background-color: #593959;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: white;
+}
+
+.main {
+    grid-area: main;
+    background-color: #593959;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+    color:white
 }
