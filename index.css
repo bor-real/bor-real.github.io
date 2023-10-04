@@ -53,15 +53,20 @@ body {
     background-color: var(--main-color);
     border-radius: 5px;
     padding: 20px;
+    
     text-align: left;
-
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    display: flex;
 }
 
 .link {
+    width:25px;
+    height:auto;
+
+    transition: 0.1s;
+}
+
+.link:hover {
     background-color: #41EAD4;
-    border-radius: 5px;
 }
 
