@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+    background-color: #593959;
+    padding: 20px;
+    text-align: center;
+}
