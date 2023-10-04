@@ -5,7 +5,7 @@
 body {
     background-color: black;
     
-    background-image: url(images/profile-widescreen.png);
+    background-image: url(assets/profile-widescreen.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -40,7 +40,7 @@ body {
     text-align: left;
 
     background-repeat: no-repeat;
-    background-image: url("images/profile.png");
+    background-image: url("assets/profile.png");
     background-size: auto 100%;
     background-position: right;
 
@@ -50,7 +50,7 @@ body {
 .stats {
     grid-area: stats;
     background-color: var(--main-color);
-    text-align: center;
+    text-align: right;
     border-radius: 5px
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .link-pic {
-    max-width: 80%;
+    max-width: 70%;
 }
 
 .link:hover {
