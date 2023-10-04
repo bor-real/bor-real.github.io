@@ -8,7 +8,7 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header header"
-        "main main other";
+        "main profile other";
 
     grid-gap: 10px;
 }
@@ -17,7 +17,7 @@ body {
     grid-area: header;
     background-color: #593959;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     color: white;
 }
@@ -28,5 +28,11 @@ body {
     border-radius: 5px;
     padding: 20px;
     text-align: left;
+
+    background-repeat: no-repeat;
+    background-image: url("images/profile.png");
+    background-size: auto 100%;
+    background-position: right;
+
     color:white
 }
