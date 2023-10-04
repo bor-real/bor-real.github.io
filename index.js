@@ -22,7 +22,7 @@ function setDOMValues() {
     if (data.data.activities && data.data.activities.length > 0) {
         const state = data.data.activities[0].state
         if (typeof state !== 'undefined') {
-            statusText.textContent = capitalizeFirstLetter(state)
+            statusText.textContent = state
         }
     } else {
         statusText.textContent = capitalizeFirstLetter(data.data.discord_status)
