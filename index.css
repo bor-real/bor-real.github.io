@@ -20,7 +20,7 @@ body {
     background-attachment: fixed;
     background-position: center bottom, center;
 
-    animation: scroll 30s linear infinite;
+    animation: scroll 90s linear infinite;
 }
 
 .grid {
@@ -59,7 +59,7 @@ body {
 .status-pfp {
     border: 6px solid #FFFFFF;
     border-radius: 50%;
-    width: 100%;
+    max-width: 100%;
 
     background-color: black;
 }
@@ -100,10 +100,12 @@ body {
 }
 
 .link-pic {
+    height: auto;
     max-width: 70%;
 }
 
 .link:hover {
     filter: brightness(75%);
+    transform: rotate(-20deg);
 }
 
