@@ -16,7 +16,7 @@ body {
     background-color: black;
     background-image: url(assets/profile-widescreen.png), url(assets/stars.gif);
     background-repeat: no-repeat, repeat;
-    background-size: cover, 10%;
+    background-size: cover, 15%;
     background-attachment: fixed;
     background-position: center bottom, center;
 
