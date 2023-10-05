@@ -1,17 +1,26 @@
 :root {
-    --main-color:#011627;
+    --main-color: #011627;
+}
+
+@keyframes scroll {
+    0% {
+        background-position: center bottom, center left;
+    }
+    100% {
+        background-position: center bottom, center right;
+    }
 }
 
 body {
     font-family: sans-serif;
-
     background-color: black;
-    
-    background-image: url(assets/profile-widescreen.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(assets/profile-widescreen.png), url(assets/stars.gif);
+    background-repeat: no-repeat, repeat;
+    background-size: cover, 10%;
     background-attachment: fixed;
-    background-position: center bottom;
+    background-position: center bottom, center;
+
+    animation: scroll 30s linear infinite;
 }
 
 .grid {
@@ -51,6 +60,8 @@ body {
     border: 6px solid #FFFFFF;
     border-radius: 50%;
     width: 100%;
+
+    background-color: black;
 }
 
 .stats {
