@@ -66,7 +66,9 @@ body {
 .status-pfp {
     border: 6px solid var(--main-color);
     border-radius: 50%;
-    max-width: 70%;
+    
+    height: auto;
+    max-width: 11em;
 
     background-color: black;
 }
@@ -81,7 +83,7 @@ body {
 }
 
 .links {
-    grid-area: links;
+    grid-area: links; 
     background-color: var(--main-color);
     border-radius: 5px;
     padding: 20px;
@@ -102,7 +104,7 @@ body {
 .link {
     border-radius: 5px;
     text-align: center;
-    width: 100%;
+    width: 5em;
     height: auto;
 
     transition: 0.1s;
