@@ -76,10 +76,12 @@ body {
 .stats {
     grid-area: stats;
     background-color: var(--main-color);
-    text-align: center;
+
+    display: flex;
+    justify-content: center;  
+
     border-radius: 5px;
     border: 1px solid var(--text-color);
-
 }
 
 .links {
