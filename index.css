@@ -29,6 +29,11 @@ body {
     animation: scroll 90s linear infinite;
 }
 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,9 +130,10 @@ body {
 
 .projects {
     grid-area: projects;
+    grid-column: span 2;
 
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
 
     border-radius: 5px;
@@ -136,9 +142,5 @@ body {
 }
 
 .projects-title {
-    grid-column: span 3;
-}
-
-.project {
-    color: var(--text-color);
+    grid-column: span 4;
 }
