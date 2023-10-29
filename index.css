@@ -140,6 +140,5 @@ body {
 }
 
 .project {
-    text-decoration: none;
     color: var(--text-color);
 }
