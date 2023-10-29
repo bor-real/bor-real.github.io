@@ -42,7 +42,7 @@ function setGithubDOMValues() {
             continue;
         }
 
-        const projectElement = document.createElement("div", { is: "expanding-list" });
+        const projectElement = document.createElement("div");
 
         projectElement.innerHTML = `
             <a class="project" href="${project.html_url}">${project.name}</a>
