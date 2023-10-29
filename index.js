@@ -1,87 +1,81 @@
 const userID = "754484719306932244"
 const userName = "bor-real"
 
-let lanyardData = null
-let githubData = null
-
-// i suck at js
+const statusColors = {
+    online: "green",
+    idle: "yellow",
+    dnd: "red",
+    offline: "darkslategrey"
+}
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-} //https://stackoverflow.com/a/1026087
-
-const statusColors = {
-    "online": "green",
-    "idle": "yellow",
-    "dnd": "red",
-    "offline": "darkslategrey"
 }
 
-function setLanyardDOMValues() {
-    const statusText = document.getElementById("status-text")
-    const profilePFP = document.getElementById("status-pfp")
+function createElementWithClass(tag, className) {
+    const element = document.createElement(tag)
+    element.classList.add(className)
+    return element
+}
 
+function createProjectElement(project) {
+    if (project.fork) return null
+
+    const projectLink = createElementWithClass("a", "project")
+    projectLink.href = project.html_url
+    projectLink.textContent = project.name
+
+    return projectLink
+}
+
+function setStatusText(statusText, lanyardData) {
+    const discordStatus = lanyardData.data.discord_status
+    statusText.textContent = `Status: ${lanyardData.data.activities?.[0]?.state || capitalizeFirstLetter(discordStatus)}`
+}
+
+function setProfilePFP(profilePFP, lanyardData) {
     const discordStatus = lanyardData.data.discord_status
     profilePFP.style.borderColor = statusColors[discordStatus]
-
-    if (lanyardData.data.activities && lanyardData.data.activities.length > 0) {
-        const state = lanyardData.data.activities[0].state
-        if (typeof state !== 'undefined') {
-            statusText.textContent = "Status: " + state
-        }
-    } else {
-        statusText.textContent = "Status: " + capitalizeFirstLetter(lanyardData.data.discord_status)
-    }
 }
 
-function setGithubDOMValues() {
-    const projectDiv = document.getElementById("projects");
+async function fetchData(url, errorPrefix = "") {
+    try {
+        const response = await fetch(url)
 
-    for (const project of githubData) {
-        if (project.fork == true) {
-            continue;
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`)
         }
 
-        const projectElement = document.createElement("div");
-
-        projectElement.innerHTML = `
-            <a class="project" href="${project.html_url}">${project.name}</a>
-        `;
-
-        projectDiv.appendChild(projectElement);
+        return await response.json()
+    } catch (error) {
+        console.error("Error:", errorPrefix, error)
+        return null
     }
 }
 
 async function getLanyard() {
-    try {
-        const response = await fetch(`https://api.lanyard.rest/v1/users/${userID}`)
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
-        }
+    const lanyardData = await fetchData(`https://api.lanyard.rest/v1/users/${userID}`, "Lanyard")
 
-        lanyardData = await response.json()
-
-        setLanyardDOMValues()
-    } 
-    catch (error) {
-        console.error("Error:", error)
+    if (lanyardData) {
+        setStatusText(document.getElementById("status-text"), lanyardData)
+        setProfilePFP(document.getElementById("status-pfp"), lanyardData)
     }
 }
 
 async function getGithubProjects() {
-    try {
-        const response = await fetch(`https://api.github.com/users/${userName}/repos`)
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
-        }
+    const githubData = await fetchData(`https://api.github.com/users/${userName}/repos`, "GitHub")
 
-        githubData = await response.json()
-        setGithubDOMValues()
-    } 
-    catch (error) {
-        console.error("Error:", error)
+    if (Array.isArray(githubData)) {
+        const projectDiv = document.getElementById("projects")
+        githubData.forEach((project) => {
+            const projectElement = createProjectElement(project)
+            if (projectElement) {
+                projectDiv.appendChild(projectElement)
+            }
+        })
     }
 }
+
 
 getGithubProjects()
 getLanyard()
