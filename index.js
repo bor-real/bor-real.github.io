@@ -27,7 +27,7 @@ function createProjectElement(project) {
     const projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
     
-    const projectHeading = document.createElement("h2");
+    const projectHeading = document.createElement("h3");
     projectHeading.textContent = project.name;
     if (project.fork) projectHeading.textContent += " (Fork)";
     
