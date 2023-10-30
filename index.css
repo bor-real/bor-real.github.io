@@ -144,10 +144,20 @@ a {
     grid-column: 1 / -1;
 }
 
+.project {
+    transition: 0.1s;
+}
+
+.project:hover {
+    filter: brightness(75%);
+}
+
 .blog {
     grid-area: blog;
 
-    text-align: center;
+    padding-left:  1em;
+    padding-right: 1em;
+    text-align: left;
     border-radius: 5px;
     background-color: var(--main-color);
     border: 1px solid var(--text-color);
