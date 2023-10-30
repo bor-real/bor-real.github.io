@@ -22,17 +22,15 @@ function createProjectElement(project) {
     
     const projectLink = document.createElement("a");
     projectLink.href = project.html_url;
+    projectLink.classList.add("project");
     if (project.description) projectLink.title = project.description;
     
-    const projectDiv = document.createElement("div");
-    projectDiv.classList.add("project");
-    
+
     const projectHeading = document.createElement("h3");
     projectHeading.textContent = project.name;
     if (project.fork) projectHeading.textContent += " (Fork)";
     
-    projectDiv.appendChild(projectHeading);
-    projectLink.appendChild(projectDiv);
+    projectLink.appendChild(projectHeading);
 
     return projectLink;
 }
