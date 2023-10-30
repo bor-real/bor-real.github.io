@@ -143,3 +143,12 @@ a {
 .projects-title {
     grid-column: 1 / -1;
 }
+
+.blog {
+    grid-area: blog;
+
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    border: 1px solid var(--text-color);
+}
