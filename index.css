@@ -41,7 +41,7 @@ a {
     grid-template-areas:
         "header header header"
         "status stats links"
-        "projects projects other";
+        "projects blog blog";
 
     grid-gap: 10px;
 }
@@ -105,7 +105,7 @@ a {
 }
 
 .link-title {
-    grid-column: span 6;
+    grid-column: 1 / -1;
     text-align: center;
 }
 
@@ -132,7 +132,7 @@ a {
     grid-area: projects;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     text-align: center;
 
     border-radius: 5px;
@@ -141,5 +141,5 @@ a {
 }
 
 .projects-title {
-    grid-column: span 4;
+    grid-column: 1 / -1;
 }
