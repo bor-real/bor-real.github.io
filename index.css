@@ -46,9 +46,7 @@ a {
     grid-template-areas:
         "header header header"
         "status stats links"
-        "projects blog blog"
-        "blank blog blog";
-
+        "projects blog blog";
     grid-gap: 10px;
 }
 
